@@ -1,0 +1,24 @@
+{
+  "name": "voice-controlled-task-manager",
+  "version": "1.0.0",
+  "description": "Web application for managing tasks through voice interaction",
+  "private": true,
+  "scripts": {
+    "setup": "cd frontend && npm install",
+    "backend:install": "cd backend_python && pip install -r requirements.txt",
+    "backend:dev": "cd backend_python && uvicorn main:app --reload --host 0.0.0.0 --port 8888",
+    "frontend:dev": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:start": "cd frontend && npm start",
+    "lint": "cd frontend && npm run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "license": "MIT"
+}
